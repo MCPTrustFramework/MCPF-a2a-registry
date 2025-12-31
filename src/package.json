@@ -1,0 +1,18 @@
+{
+  "name": "mcpf-a2a-registry",
+  "version": "1.0.0-alpha",
+  "type": "module",
+  "description": "MCPF Agent-to-Agent Delegation Registry",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": ["mcpf", "a2a", "delegation", "agents"],
+  "author": "MCP Trust Framework Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

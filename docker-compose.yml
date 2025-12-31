@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  a2a-registry:
+    build: .
+    ports:
+      - "4003:4003"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db:5432/mcpf_a2a
+      - PORT=4003
+      - A2A_REGISTRY_VERSION=1.0.0-alpha
+    depends_on:
+      - db
+    restart: unless-stopped
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=mcpf_a2a
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+volumes:
+  postgres_data:
